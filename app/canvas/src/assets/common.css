@@ -1,0 +1,134 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box;
+  z-index: 0; }
+
+body {
+  background: white; }
+
+main {
+  width: 75%;
+  height: 100vh;
+  margin: 0 auto; }
+
+.art {
+  position: relative;
+  height: 100vh; }
+  .art section {
+    width: calc(100% - 250px);
+    float: left;
+    position: relative;
+    margin: 30px auto; }
+    .art section .cursor {
+      border-radius: 50%;
+      border: 2px solid red;
+      position: absolute;
+      z-index: 100; }
+    .art section canvas {
+      width: 100%;
+      border: 1px solid #555;
+      /* scaling */
+      image-rendering: optimizeSpeed;
+      /* Older versions of FF          */
+      image-rendering: -moz-crisp-edges;
+      /* FF 6.0+                       */
+      image-rendering: -webkit-optimize-contrast;
+      /* Safari                        */
+      image-rendering: -o-crisp-edges;
+      /* OS X & Windows Opera (12.02+) */
+      image-rendering: pixelated;
+      /* Awesome future-browsers       */
+      -ms-interpolation-mode: nearest-neighbor;
+      /* IE                            */ }
+  .art article {
+    width: 250px;
+    float: left;
+    padding: 10px;
+    padding-right: 20px; }
+    .art article h1 {
+      padding: 20px 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center; }
+    .art article table.controls {
+      margin-top: 80px; }
+      .art article table.controls tr {
+        border-bottom: 1px solid rgba(50, 50, 52, 0.2);
+        height: 51px; }
+        .art article table.controls tr:last-of-type {
+          border-bottom: none; }
+        .art article table.controls tr td {
+          padding: 10px;
+          font-family: 'Open Sans', Arial, sans-serif;
+          width: 75%;
+          vertical-align: middle; }
+        .art article table.controls tr td:first-of-type {
+          width: 25%;
+          padding: 2px;
+          vertical-align: middle; }
+          .art article table.controls tr td:first-of-type p {
+            line-height: 140%; }
+          .art article table.controls tr td:first-of-type img {
+            width: 100%; }
+    .art article .colors {
+      overflow: hidden;
+      width: 152px;
+      margin: 20px auto;
+      border: 1px solid #555; }
+      .art article .colors .row {
+        height: 30px; }
+      .art article .colors .color {
+        width: 30px;
+        height: 30px;
+        float: left; }
+      .art article .colors .active .active {
+        border: 2px solid white; }
+
+/*# sourceMappingURL=common.css.map */
