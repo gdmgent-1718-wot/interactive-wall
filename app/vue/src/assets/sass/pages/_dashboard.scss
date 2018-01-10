@@ -1,0 +1,48 @@
+.dashboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: white;
+
+    .content {
+        width: 83%;
+        padding: 2rem;
+        float: left;
+        border-left: 2px solid $grey;
+    }
+
+    table {
+        width: 100%;
+        thead {
+            text-align: left;
+        }
+        &.overview__table td {
+            border-top: 1px solid $grey;
+            padding: 0 0.5rem;
+        }
+
+        &.detail__table td {
+            padding: 0.5rem;
+
+            &:first-child {
+                width: 135px;
+                font-weight: 700;
+            }
+        }
+        .cell__image {
+            text-align: center;
+        }
+        img {
+            height: 50px;
+        }
+
+        .fa {
+            padding: 5px;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+            color: $primary-color;
+        }
+    }
+}

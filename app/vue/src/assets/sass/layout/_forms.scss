@@ -1,6 +1,7 @@
 form {
     input[type="text"],
     input[type="email"],
+    input[type="password"],
     textarea {
         display: block;
         margin: 0.5rem 0 2rem;
@@ -13,4 +14,12 @@ form {
     textarea {
         min-height: 200px;
     }
+}
+
+#form__dashboard {
+    margin: 150px auto;
+    width: 500px;
+    border: 2px solid $grey;
+    border-radius: 5px;
+    padding: 2rem;
 }
