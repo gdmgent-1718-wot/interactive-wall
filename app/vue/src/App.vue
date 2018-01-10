@@ -28,7 +28,12 @@ export default {
 		return {
 			navOpen: false,
 		}    
-  },
+	},
+	watch: {
+     $route() {
+         this.navOpen = false;
+     }
+	},
 
   methods: {
       toggleNav() {
