@@ -1,0 +1,47 @@
+.row {
+	display: block;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	zoom: 1; 
+}
+.row::before, .row::after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	overflow: hidden; 
+}
+.row::after {
+	clear: both; 
+}
+
+.column {
+    display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	min-height: 1px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	margin-bottom: 1rem;
+	overflow: hidden; 
+}
+
+.column-3 {
+    width: 25%;
+}
+
+.column-4 {
+    width: 33.33333%;
+}
+
+.column-6 {
+    width: 50%;
+}
+
+.column-7 {
+    width: 58.33333%;
+}
+
+.column-9 {
+    width: 75%;
+}

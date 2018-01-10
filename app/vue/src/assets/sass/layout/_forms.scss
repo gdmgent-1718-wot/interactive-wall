@@ -1,0 +1,16 @@
+form {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        display: block;
+        margin: 0.5rem 0 2rem;
+        border: 2px solid $grey;
+        padding: 0.8rem;
+        width: 100%;
+        resize: vertical;
+    }
+
+    textarea {
+        min-height: 200px;
+    }
+}

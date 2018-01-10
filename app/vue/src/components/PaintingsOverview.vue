@@ -1,12 +1,16 @@
 <template>
-  <div>
-    <h1>Kunstwerken</h1>
-    <div class="grid__row">
-      <div v-for="painting in paintings" class="grid__column-bp4-4">
-        <section>
-          <img :src="painting.imageUrl">
-          <h2>{{painting.title}}</h2>
-          <p>{{painting.artist}}</p>
+  <div id="overview">
+    <h1>Galerij</h1>
+    <div class="row">
+      <div v-for="painting in paintings" class="column column-4">
+        <section class="painting">
+          <div class="painting__image">
+            <img :src="painting.imageUrl">
+          </div>
+          <div class="painting__text">          
+            <h2>{{painting.title}}</h2>
+            <p>{{painting.artist}}</p>
+          </div>
         </section>
       </div>
     </div>
@@ -38,18 +42,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
 </style>

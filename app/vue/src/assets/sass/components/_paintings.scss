@@ -1,0 +1,21 @@
+section.painting {
+    position: relative;
+    .painting__image{
+        height: 330px;
+        overflow: hidden;
+    }
+    img {
+        width: 100%;
+    }
+
+    .painting__text {
+        position: absolute;
+        bottom: 0;
+        background: #fff;
+        padding: 0.8rem;
+
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+}
