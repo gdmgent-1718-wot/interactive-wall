@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import HelloWorld from '@/components/HelloWorld'
+import Create from '@/components/Create'
 import PaintingsOverview from '@/components/PaintingsOverview'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
@@ -21,8 +21,8 @@ export default new Router({
     },
     {
       path: '/nieuw',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      name: 'Create',
+      component: Create,
       beforeEnter: (to, from, next) => {
         window.scrollTo(0, 0)
         next();

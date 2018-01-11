@@ -3,6 +3,7 @@
       <div class="row">
           <div class="column column-9">
               <h1>Live Stream</h1>
+              <art :controls="false"></art>
           </div>
           <div class="column column-3">
                 <h1>Nieuw</h1>
@@ -23,9 +24,11 @@
 
 <script>
 import axios from "axios";
+import Art from './tags/Art.vue';
 
 export default {
   name: "Home",
+  components: { Art },
   data() {
     return {
       paintings: []

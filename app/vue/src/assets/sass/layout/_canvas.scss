@@ -1,0 +1,95 @@
+.art {
+    position: relative;
+    height: 100vh;
+
+    section {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+
+        .cursor {
+            border-radius: 50%;
+            border: 2px solid red;
+            position: absolute;
+            z-index: 100;
+        }
+
+        canvas {
+            width: 100%;
+            border: 1px solid #555;
+
+            /* scaling */
+            image-rendering: optimizeSpeed;             /* Older versions of FF          */
+            image-rendering: -moz-crisp-edges;          /* FF 6.0+                       */
+            image-rendering: -webkit-optimize-contrast; /* Safari                        */
+            image-rendering: -o-crisp-edges;            /* OS X & Windows Opera (12.02+) */
+            image-rendering: pixelated;                 /* Awesome future-browsers       */
+            -ms-interpolation-mode: nearest-neighbor;   /* IE                            */
+        }
+    }
+
+    article {
+        width: 250px;
+        float: left;
+        padding: 10px;
+        padding-right: 20px;
+
+        h1 {
+            padding: 20px 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        table.controls {
+            margin-top: 80px;
+
+            tr {
+                border-bottom: 1px solid rgba(#323234, 0.2);
+                height: 51px;
+
+                &:last-of-type { border-bottom: none; }
+
+                td {
+                    padding: 10px;
+                    font-family: 'Open Sans', Arial, sans-serif;
+                    width: 75%;
+                    vertical-align: middle;
+                }
+
+                td:first-of-type {
+                    width: 25%;
+                    padding: 2px;
+                    vertical-align: middle;
+
+                    p {
+                        line-height: 140%;
+                    }
+
+                    img { width: 100%; }
+                }
+            } 
+
+        }
+
+        .colors {
+            overflow: hidden;
+            width: 152px;
+            margin: 20px auto;
+            border: 1px solid #555;
+
+            .row {
+                height: 30px;
+            }
+
+            .color {
+                width: 30px;
+                height: 30px;
+                float: left;
+            }
+
+            .active .active { border: 2px solid white; }
+        }
+    }
+}

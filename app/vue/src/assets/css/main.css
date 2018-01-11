@@ -505,6 +505,79 @@ form textarea {
 form textarea {
   min-height: 200px; }
 
+.art {
+  position: relative;
+  height: 100vh; }
+  .art section {
+    width: 100%;
+    position: relative;
+    margin: 0 auto; }
+    .art section .cursor {
+      border-radius: 50%;
+      border: 2px solid red;
+      position: absolute;
+      z-index: 100; }
+    .art section canvas {
+      width: 100%;
+      border: 1px solid #555;
+      /* scaling */
+      image-rendering: optimizeSpeed;
+      /* Older versions of FF          */
+      image-rendering: -moz-crisp-edges;
+      /* FF 6.0+                       */
+      image-rendering: -webkit-optimize-contrast;
+      /* Safari                        */
+      image-rendering: -o-crisp-edges;
+      /* OS X & Windows Opera (12.02+) */
+      image-rendering: pixelated;
+      /* Awesome future-browsers       */
+      -ms-interpolation-mode: nearest-neighbor;
+      /* IE                            */ }
+  .art article {
+    width: 250px;
+    float: left;
+    padding: 10px;
+    padding-right: 20px; }
+    .art article h1 {
+      padding: 20px 0;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: center; }
+    .art article table.controls {
+      margin-top: 80px; }
+      .art article table.controls tr {
+        border-bottom: 1px solid rgba(50, 50, 52, 0.2);
+        height: 51px; }
+        .art article table.controls tr:last-of-type {
+          border-bottom: none; }
+        .art article table.controls tr td {
+          padding: 10px;
+          font-family: 'Open Sans', Arial, sans-serif;
+          width: 75%;
+          vertical-align: middle; }
+        .art article table.controls tr td:first-of-type {
+          width: 25%;
+          padding: 2px;
+          vertical-align: middle; }
+          .art article table.controls tr td:first-of-type p {
+            line-height: 140%; }
+          .art article table.controls tr td:first-of-type img {
+            width: 100%; }
+    .art article .colors {
+      overflow: hidden;
+      width: 152px;
+      margin: 20px auto;
+      border: 1px solid #555; }
+      .art article .colors .row {
+        height: 30px; }
+      .art article .colors .color {
+        width: 30px;
+        height: 30px;
+        float: left; }
+      .art article .colors .active .active {
+        border: 2px solid white; }
+
 .btn {
   background: #35e5b3;
   color: #fff;
