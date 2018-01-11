@@ -5,7 +5,7 @@
       <div v-for="painting in paintings" class="column column-4">
         <section class="painting">
           <div class="painting__image">
-            <img :src="painting.imageUrl">
+            <img :src="hostingurl + '/' + painting.imageUrl">
           </div>
           <div class="painting__text">          
             <h2>{{painting.title}}</h2>
@@ -19,13 +19,14 @@
 
 <script>
 import axios from 'axios';
-import { apiurl } from './../config.js';
+import { apiurl,hostingurl } from './../config.js';
 
 export default {
   name: 'PaintingsOverview',
   data () {
     return {
-      paintings: []
+      paintings: [],
+      hostingurl: hostingurl,
     }
   },
   mounted () {

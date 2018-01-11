@@ -54,8 +54,8 @@
         data() {
             return {
                 form: {
-                    username: '',
-                    artname: '',
+                    username: 'Sander',
+                    artname: 'Heeeyyy',
                 },
                 controller: {},
                 activecolor: [3, 4],
@@ -72,6 +72,7 @@
                     ['#ff0000', '#aa0000', '#990000', '#550000', '#110000'],
                     ['#00ff00', '#00aa00', '#009900', '#005500', '#001100'],
                     ['#0000ff', '#0000aa', '#000099', '#000055', '#000011'],
+                    ['#145487', '#dddddd', '#252c74', '#000055', '#000011'],
                     ['#ffffff', '#888888', '#555555', '#222222', '#000000'],
                 ],
                 brush: {
@@ -250,7 +251,7 @@
                 }
 
                 console.log(newPainting);
-                axios.post(apiurl + 'paintings', newPainting).then((response) => {
+                axios.post(apiurl + '/paintings', newPainting).then((response) => {
                     // Reset
                     var context = canvas.getContext('2d');
                     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -265,7 +266,7 @@
                 return newcoord;
             },
             saveImage() {
-                // if (this.controls)
+                if (this.controls)
                 {
                     this.alreadysaved = true;
 
@@ -279,7 +280,7 @@
 
                     const config = { headers: { 'content-type': 'multipart/form-data' } };
 
-                    axios.post(url, params, config).then(response => { this.uploadToDatabase(name + '.jpg'); });
+                    axios.post(url, params, config).then(response => { this.uploadToDatabase(name + '.png'); });
                 }
             }
         },
