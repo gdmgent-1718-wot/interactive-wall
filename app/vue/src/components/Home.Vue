@@ -7,15 +7,7 @@
           </div>
           <div class="column column-3">
                 <h1>Nieuw</h1>
-                <section v-for="painting in paintings" class="painting">
-                    <div class="painting__image">
-                        <img :src="painting.imageUrl">
-                    </div>
-                    <div class="painting__text">          
-                        <h2>{{painting.title}}</h2>
-                        <p>{{painting.artist}}</p>
-                    </div>
-                </section>
+                <item v-for="painting in paintings" :id="painting.id" :item="painting"></item>
                 <router-link to="/galerij" class="btn">Bekijk de galerij</router-link>
           </div>
       </div>    
@@ -26,18 +18,18 @@
 import axios from "axios";
 import Art from './tags/Art.vue';
 import { apiurl } from './../config.js';
+import Item from './tags/Item';
 
 export default {
   name: "Home",
-  components: { Art },
+  components: { Art, Item },
   data() {
     return {
       paintings: []
     };
   },
   mounted() {
-    axios
-      .get(apiurl + "/paintings")
+    axios.get(apiurl + "/paintings")
       .then(response => {
         console.log(response.data);
         console.log(response.data.length);

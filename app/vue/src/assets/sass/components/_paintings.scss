@@ -1,18 +1,26 @@
 section.painting {
     position: relative;
-    .painting__image{
-        height: 330px;
-        overflow: hidden;
-    }
-    img {
+
+    .image {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         width: 100%;
+        padding-top: 74%; /* 50*37 aspect ratio */
     }
+
+    &:hover .painting__text { opacity: 1; }
 
     .painting__text {
         position: absolute;
-        bottom: 0;
+        bottom: 1px;
+        left: 1px;
+        right: 1px;
+        opacity: 0;
         background: #fff;
         padding: 0.8rem;
+        transition: opacity 0.3s;
 
         h2 {
             font-size: 1.2rem;
