@@ -43,6 +43,7 @@ export default {
     axios.put('http://localhost:3000/paintings/' + this.$route.params.id, editpainting)
         .then((response) => {
         console.log(response);
+        location.href = '/dashboard/paintings';
         })
         .catch((error) => {
         console.log(error);
