@@ -25,6 +25,7 @@
 <script>
 import axios from "axios";
 import Art from './tags/Art.vue';
+import { apiurl } from './../config.js';
 
 export default {
   name: "Home",
@@ -36,7 +37,7 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost:3000/paintings")
+      .get(apiurl + "/paintings")
       .then(response => {
         console.log(response.data);
         console.log(response.data.length);

@@ -19,6 +19,7 @@
 
 <script>
 import axios from 'axios';
+import { apiurl } from './../config.js';
 
 export default {
   name: 'PaintingsOverview',
@@ -28,7 +29,7 @@ export default {
     }
   },
   mounted () {
-    axios.get('http://localhost:3000/paintings')
+    axios.get(apiurl + '/paintings')
       .then((response) => {
         console.log(response.data);
         this.paintings = response.data;

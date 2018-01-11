@@ -1,6 +1,11 @@
 <template>
     <div class="art">
         <article v-if="controls">
+            <div class="inputs">
+                <input type="text" v-model="form.artname" placeholder="Naam van het kunstwerk">
+                <input type="text" v-model="form.username" placeholder="Uw naam">
+            </div>
+
             <div class="colors">
                 <div v-for="(row, y_index) in colors" v-bind:class="{ row: true, active: y_index == activecolor[0] }">
                     <div v-for="(color, x_index) in row" v-bind:class="{ color: true, active: x_index == activecolor[1] }" :style="'background-color:'+color+';'"></div>
@@ -40,11 +45,18 @@
 </template>
 
 <script>
+    import axios from 'axios';
+    import { apiurl } from './../../config.js';
+
     export default {
         name: 'Art',
         props: ['controls'],
         data() {
             return {
+                form: {
+                    username: '',
+                    artname: '',
+                },
                 controller: {},
                 activecolor: [3, 4],
                 prevcoords: null,
@@ -94,6 +106,15 @@
                 var canvasWidth = document.getElementById('canvas').clientWidth;
                 this.scaling = (((canvasWidth - this.canvassize.width) / 5) / 100) + 1;
             });
+
+            // Mavigation width issues
+            setInterval(() => {
+                if (document.getElementById('canvas'))
+                {   
+                    var canvasWidth = document.getElementById('canvas').clientWidth;
+                    this.scaling = (((canvasWidth - this.canvassize.width) / 5) / 100) + 1;
+                }
+            }, 1000);
 
             // ============================
 
@@ -163,10 +184,7 @@
                         {
                             if (this.alreadysaved == false)
                             {
-                                var dataURL = document.getElementById('canvas').toDataURL();
-                                this.alreadysaved = true;
-                                this.savedimages.push(dataURL);
-                                console.log(this.savedimages)
+                                this.saveImage();
                             }
                         }
                         else
@@ -224,10 +242,49 @@
             });
         },
         methods: {
+            uploadToDatabase(artURL) {
+                let newPainting = {
+                    title: this.form.artname,
+                    artist: this.form.username,
+                    imageUrl: artURL
+                }
+
+                console.log(newPainting);
+                axios.post(apiurl + 'paintings', newPainting).then((response) => {
+                    // Reset
+                    var context = canvas.getContext('2d');
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+                    this.form.artname = '';
+                    this.form.username = '';
+                }).catch((error) => {
+                    console.log(error);
+                })
+            },
             reverse(x) {
                 var newcoord = this.canvassize.width - x;
                 return newcoord;
+            },
+            saveImage() {
+                // if (this.controls)
+                {
+                    this.alreadysaved = true;
+
+                    var dataURL = document.getElementById('canvas').toDataURL('image/jpeg');
+                    var url = 'http://www.angry-moustache.com/wall/save.php';
+                    var name = this.$slugify.string(40);
+
+                    let params = new FormData();
+                    params.append('file', dataURL);
+                    params.append('name', name);
+
+                    const config = { headers: { 'content-type': 'multipart/form-data' } };
+
+                    axios.post(url, params, config).then(response => { this.uploadToDatabase(name + '.jpg'); });
+                }
             }
+        },
+        beforeDestroy() {
+            window.clearInterval();
         }
     }
 </script>

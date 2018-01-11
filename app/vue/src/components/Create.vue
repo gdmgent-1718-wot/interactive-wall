@@ -16,6 +16,7 @@
 
 <script>
 import axios from 'axios';
+import { apiurl } from './../config.js';
 
 export default {
   name: 'Create',
@@ -37,7 +38,7 @@ export default {
         }
 
         console.log(newPainting);
-        axios.post('http://localhost:3000/paintings', newPainting)
+        axios.post(apiurl + '/paintings', newPainting)
           .then((response) => {
             console.log(response);
           })
