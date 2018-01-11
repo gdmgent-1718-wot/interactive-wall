@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
 main {
 	width: 1140px;
-	margin: 0 auto 200px;
+	margin: 100px auto;
 
 	h4 {
 		font-size: 1.5rem;
@@ -87,7 +87,7 @@ main {
 	button {
 		border: 3px solid #35e5b3;
 		background: #35e5b3;
-		color: #ececec;
+		color: white;
 		border-radius: 5px;
 		padding: 10px 80px;
 		font-weight: bold;
@@ -103,6 +103,16 @@ main {
 			background: #cbc8c9;
 			border-color: #cbc8c9;
 		}
+	}
+
+	input {
+		display: block;
+        margin: 0.5rem 0 2rem;
+        border: 2px solid #ececec;
+        padding: 0.8rem;
+        width: 100%;
+        resize: vertical;
+        font-size: 1rem;
 	}
 
 	.colors {
