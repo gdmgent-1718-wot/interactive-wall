@@ -2,8 +2,8 @@
     <div class="art">
         <article v-if="controls">
             <div class="inputs">
-                <input type="text" v-model="form.artname" placeholder="Naam van het kunstwerk">
-                <input type="text" v-model="form.username" placeholder="Uw naam">
+                <input v-bind:class="{ error : this.form.error_art }" type="text" v-model="form.artname" placeholder="Naam van het kunstwerk">
+                <input v-bind:class="{ error : this.form.error_name }" type="text" v-model="form.username" placeholder="Uw naam">
             </div>
 
             <div class="colors">
@@ -56,6 +56,8 @@
                 form: {
                     username: '',
                     artname: '',
+                    error_art: false,
+                    error_name: false,
                 },
                 controller: {},
                 activecolor: [3, 4],
@@ -85,6 +87,7 @@
                         'margin-left': '0px',
                     },
                     size: 10,
+                    sizespeed: 1,
                 }
             }
         },
@@ -163,18 +166,21 @@
                         {
                             if (this.brush.size != 1)
                             {
-                                this.brush.size--;
+                                this.brush.size -= this.brush.sizespeed;
+                                this.brush.sizespeed++;
                             }
                         }
 
                         if (this.controller.plus != null)
                         {
-                            if (this.brush.size != 100)
+                            if (this.brush.size < 101)
                             {
-                                this.brush.size++;
+                                this.brush.size += this.brush.sizespeed;
+                                this.brush.sizespeed++;
                             }
                         }
 
+                        if (!this.controller.plus && !this.controller.minus) { this.brush.sizespeed = null; }
                         if (!this.controller.drawing && !this.controller.erasing) { this.prevcoords = null; }
 
                         if (this.controller.stop && this.controller.stopconfirm)
@@ -227,7 +233,6 @@
 
                             if (this.prevcoords != null)
                             {
-                                console.log(this.prevcoords);
                                 context.moveTo(this.prevcoords[0], this.prevcoords[1]);
                                 context.lineTo(coords1[0], coords1[1]);
                             }
@@ -269,7 +274,7 @@
             saveImage() {
                 if (this.controls)
                 {
-                    if (this.form.artname && this.form.username)
+                    if (this.form.artname != '' && this.form.username != '')
                     {
                         this.alreadysaved = true;
 
@@ -283,6 +288,14 @@
 
                         const config = { headers: { 'content-type': 'multipart/form-data' } };
                         axios.post(url, params, config).then(response => { this.uploadToDatabase(name + '.png'); });
+                    }
+                    else
+                    {
+                        if (this.form.artname == '')
+                            this.form.error_art = true;
+
+                        if (this.form.username == '')
+                            this.form.error_name = true;
                     }
                 }
             }
