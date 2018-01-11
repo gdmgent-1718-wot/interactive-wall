@@ -373,7 +373,7 @@ a {
   float: left;
   position: relative;
   z-index: 15;
-  transition: width 0.3s; }
+  transition: all 0.3s ease-in; }
   .container.nav-open {
     margin-left: 0;
     width: 100%; }
@@ -535,11 +535,21 @@ form textarea {
       /* Awesome future-browsers       */
       -ms-interpolation-mode: nearest-neighbor;
       /* IE                            */ }
+  .art section.controls {
+    width: calc(100% - 250px);
+    float: left; }
   .art article {
     width: 250px;
     float: left;
     padding: 10px;
     padding-right: 20px; }
+    .art article input {
+      display: block;
+      margin: 0.5rem 0 2rem;
+      border: 2px solid #c7d1cd;
+      padding: 0.8rem;
+      width: 100%;
+      resize: vertical; }
     .art article h1 {
       padding: 20px 0;
       font-family: 'Open Sans', Arial, sans-serif;
@@ -572,7 +582,8 @@ form textarea {
       margin: 20px auto;
       border: 1px solid #555; }
       .art article .colors .row {
-        height: 30px; }
+        height: 30px;
+        margin: 0; }
       .art article .colors .color {
         width: 30px;
         height: 30px;

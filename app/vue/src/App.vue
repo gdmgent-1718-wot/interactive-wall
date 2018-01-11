@@ -14,7 +14,7 @@
 	  <div class="container" v-bind:class="{ 'nav-open': !navOpen }">
 		<i class="fa fa-bars" v-bind:class="{ 'nav-open': navOpen }" @click.prevent="toggleNav"></i>
 		<header>
-			<img src="src/assets/logo.png">
+			<img src="src/assets/logo.png" v-if="$route.path != '/wall'">
 		</header>
 		<router-view/>
 	</div>

@@ -265,21 +265,24 @@
                 return newcoord;
             },
             saveImage() {
-                // if (this.controls)
+                if (this.controls)
                 {
-                    this.alreadysaved = true;
+                    if (this.form.artname && this.form.username)
+                    {
+                        this.alreadysaved = true;
 
-                    var dataURL = document.getElementById('canvas').toDataURL();
-                    var url = 'http://www.angry-moustache.com/wall/save.php';
-                    var name = this.$slugify.string(40);
+                        var dataURL = document.getElementById('canvas').toDataURL();
+                        var url = 'http://www.angry-moustache.com/wall/save.php';
+                        var name = this.$slugify.string(40);
 
-                    let params = new FormData();
-                    params.append('file', dataURL);
-                    params.append('name', name);
+                        let params = new FormData();
+                        params.append('file', dataURL);
+                        params.append('name', name);
 
-                    const config = { headers: { 'content-type': 'multipart/form-data' } };
+                        const config = { headers: { 'content-type': 'multipart/form-data' } };
 
-                    axios.post(url, params, config).then(response => { this.uploadToDatabase(name + '.jpg'); });
+                        axios.post(url, params, config).then(response => { this.uploadToDatabase(name + '.jpg'); });
+                    }
                 }
             }
         },
