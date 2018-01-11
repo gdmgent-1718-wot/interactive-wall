@@ -46,6 +46,10 @@ export default {
     };
   },
   mounted() {
+    let user = localStorage.getItem('username');
+    if (!user) {
+      this.$router.push('/');
+    }
     axios
       .get("http://localhost:3000/paintings")
       .then(response => {

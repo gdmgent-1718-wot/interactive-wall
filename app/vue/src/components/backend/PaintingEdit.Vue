@@ -29,6 +29,10 @@ export default {
     }
   },
   mounted () {
+      let user = localStorage.getItem('username');
+      if (!user) {
+        this.$router.push('/');
+      }
       axios.get('http://localhost:3000/paintings/' + this.$route.params.id)
       .then(response => {
         console.log(response)

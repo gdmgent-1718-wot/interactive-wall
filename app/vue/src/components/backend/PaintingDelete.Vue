@@ -23,7 +23,11 @@ export default {
       painting: {},
     }
   },
-  mounted () {    
+  mounted () {
+    let user = localStorage.getItem('username');
+    if (!user) {
+      this.$router.push('/');
+    }    
   },
   methods: {
     onSubmit(){
