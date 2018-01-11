@@ -15,24 +15,24 @@
                 </tr>
                 <tr>
                     <td><img src="@/assets/icons/b.png"></td>
-                    <td>Teken</td>
+                    <td><p>Teken</p></td>
                 </tr>
                 <tr>
                     <td><img src="@/assets/icons/a.png"></td>
-                    <td>Verwijder</td>
+                    <td><p>Verwijder</p></td>
                 </tr>
                 <tr>
                     <td><img src="@/assets/icons/plus-minus.png"></td>
-                    <td>Verander lijndikte</td>
+                    <td><p>Verander lijndikte</p></td>
                 </tr>
                 <tr>
-                    <td><img src="@/assets/icons/one-two.png"></td>
-                    <td>Opslaan</td>
+                    <td><img src="./../assets/icons/one-two.png"></td>
+                    <td><p>Opslaan</p></td>
                 </tr>
             </table>
         </article>
 
-        <section id="draw_area" v-if="brush">
+        <section id="draw_area" v-bind:class="{ controls : true }" v-if="brush">
             <div class="cursor" :style="brush.cursorstyle"></div>
             <canvas :style="'background-color:' + canvasbackground + ';'" width="500" height="370" id="canvas"></canvas>
         </section>

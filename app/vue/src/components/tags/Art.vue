@@ -15,29 +15,29 @@
             <!-- <h1>Controls</h1> -->
             <table class="controls">
                 <tr>
-                    <td><img src="@/assets/icons/arrows.png"></td>
+                    <td><img src="./../../assets/icons/arrows.png"></td>
                     <td><p>Verander kleur</p></td>
                 </tr>
                 <tr>
-                    <td><img src="@/assets/icons/b.png"></td>
-                    <td>Teken</td>
+                    <td><img src="./../../assets/icons/b.png"></td>
+                    <td><p>Teken</p></td>
                 </tr>
                 <tr>
-                    <td><img src="@/assets/icons/a.png"></td>
-                    <td>Verwijder</td>
+                    <td><img src="./../../assets/icons/a.png"></td>
+                    <td><p>Verwijder</p></td>
                 </tr>
                 <tr>
-                    <td><img src="@/assets/icons/plus-minus.png"></td>
-                    <td>Verander lijndikte</td>
+                    <td><img src="./../../assets/icons/plus-minus.png"></td>
+                    <td><p>Verander lijndikte</p></td>
                 </tr>
                 <tr>
-                    <td><img src="@/assets/icons/one-two.png"></td>
-                    <td>Opslaan</td>
+                    <td><img src="./../../assets/icons/one-two.png"></td>
+                    <td><p>Opslaan</p></td>
                 </tr>
             </table>
         </article>
 
-        <section id="draw_area" v-if="brush">
+        <section id="draw_area" v-bind:class="{ controls : controls }" v-if="brush">
             <div class="cursor" :style="brush.cursorstyle"></div>
             <canvas :style="'background-color:' + canvasbackground + ';'" width="500" height="370" id="canvas"></canvas>
         </section>
@@ -269,7 +269,7 @@
                 {
                     this.alreadysaved = true;
 
-                    var dataURL = document.getElementById('canvas').toDataURL('image/jpeg');
+                    var dataURL = document.getElementById('canvas').toDataURL();
                     var url = 'http://www.angry-moustache.com/wall/save.php';
                     var name = this.$slugify.string(40);
 

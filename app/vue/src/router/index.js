@@ -5,56 +5,21 @@ import Create from '@/components/Create'
 import PaintingsOverview from '@/components/PaintingsOverview'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
+import Wall from '@/components/Wall'
 
 Vue.use(Router)
 
+let routes = [
+    { path: '/', component: Home },
+    { path: '/nieuw', component: Create },
+    { path: '/galerij', component: PaintingsOverview },
+    { path: '/about', component: About },
+    { path: '/contact', component: Contact },
+    { path: '/wall', component: Wall },
+];
+
 export default new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'Home',
-      component: Home,
-      beforeEnter: (to, from, next) => {
-        window.scrollTo(0, 0)
-        next();
-      }
-    },
-    {
-      path: '/nieuw',
-      name: 'Create',
-      component: Create,
-      beforeEnter: (to, from, next) => {
-        window.scrollTo(0, 0)
-        next();
-      }
-    },
-    {
-      path: '/galerij',
-      name: 'PaintingsOverview',
-      component: PaintingsOverview,
-      beforeEnter: (to, from, next) => {
-        window.scrollTo(0, 0)
-        next();
-      }
-    },
-    {
-      path: '/about',
-      name: 'About',
-      component: About,
-      beforeEnter: (to, from, next) => {
-        window.scrollTo(0, 0)
-        next();
-      }
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact,
-      beforeEnter: (to, from, next) => {
-        window.scrollTo(0, 0)
-        next();
-      }
-    }
-  ]
-})
+    routes,
+    mode: 'history',
+    scrollBehavior (to, from, savedPosition) { return { x: 0, y: 0 } }
+});
