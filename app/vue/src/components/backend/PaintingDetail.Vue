@@ -24,7 +24,7 @@
                       </tr>
                       <tr>
                           <td>Aangemaakt op:</td>
-                          <td>{{painting.created_at}}</td>
+                          <td>{{ $slugify.createDate(painting.created_at) }}</td>
                       </tr>
                   </table>
                   <router-link :to="'/dashboard/painting/' + painting._id + '/edit'" class="btn smallbtn"><i class="fa fa-pencil"></i> Edit</router-link>

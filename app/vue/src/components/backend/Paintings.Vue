@@ -16,7 +16,7 @@
                 <td class="cell__image"><img :src="hostingurl + '/' + painting.imageUrl"></td>       
                 <td>{{painting.title}}</td>
                 <td>{{painting.artist}}</td>
-                <td>{{painting.created_at}}</td>
+                <td>{{ $slugify.createDate(painting.created_at) }}</td>
                 <td>
                     <router-link :to="'/dashboard/painting/' + painting._id" class="fa fa-eye"></router-link>
                     <router-link :to="'/dashboard/painting/' + painting._id + '/edit'" class="fa fa-pencil"></router-link>
