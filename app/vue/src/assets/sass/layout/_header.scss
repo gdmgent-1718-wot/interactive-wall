@@ -2,7 +2,7 @@ header.webapp__header {
     text-align: center;
     margin-bottom: 2.6rem;
     img {
-        width: 200px;
+        width: 80px;
     }
 }
 
@@ -14,3 +14,20 @@ header.dashboard__header {
         height: 50px;
     }
 }
+
+@media (min-width: 42.5rem) {
+    header.webapp__header {
+        img {
+            width: 120px;
+        }
+    }
+}
+
+@media (min-width: 60rem) {
+    header.webapp__header {
+        img {
+            width: 200px;
+        }
+    }
+}
+

@@ -2,7 +2,7 @@
     <div id="overview">
     <h1>Galerij</h1>
         <div class="row">
-            <div v-for="painting in paintings"  class="column column-4">
+            <div v-for="painting in paintings"  class="column column-sm-12 column-4">
                 <item :id="painting.id" :item="painting"></item>
             </div>
         </div>

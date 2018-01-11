@@ -1,11 +1,11 @@
 <template>
   <div id="home">
       <div class="row">
-          <div class="column column-9">
+          <div class="column column-sm-12 column-9">
               <h1>Live Stream</h1>
               <art :controls="false"></art>
           </div>
-          <div class="column column-3">
+          <div class="column column-sm-12 column-3">
                 <h1>Nieuw</h1>
                 <item v-for="painting in paintings" :id="painting.id" :item="painting"></item>
                 <router-link to="/galerij" class="btn">Bekijk de galerij</router-link>

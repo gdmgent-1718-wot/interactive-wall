@@ -4,13 +4,11 @@ a {
 }
 
 .container {
-    padding: 2rem;
-    margin-left: 300px;
-    width: calc(100% - 300px);
+    padding: 1rem;
+    width: 100%;
     float: left;
     position: relative;
     z-index: 15;
-    transition: all 0.3s ease-in;
 
     &.nav-open {
         margin-left: 0;
@@ -22,12 +20,29 @@ a {
         color: $primary-color;
         display: block;
         position: absolute;
-        left: 2rem;
-        top: 2rem;
+        left: 1rem;
+        top: 1.5rem;
         cursor: pointer;
 
         &.nav-open {
             display: none;
+        }
+    }
+}
+
+@media (min-width: 60rem) {
+    .container {
+        padding: 2rem;
+        margin-left: 300px;
+        width: calc(100% - 300px);
+        transition: all 0.3s ease-in;
+        &.nav-open {
+            width: 100%;
+        }
+
+        .fa-bars {
+            left: 2rem;
+            top: 2rem;
         }
     }
 }

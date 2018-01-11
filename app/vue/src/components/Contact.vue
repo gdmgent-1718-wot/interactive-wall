@@ -2,7 +2,7 @@
   <div id="contact">
     <h1>Contact</h1>
     <div class="row">
-        <div class="column column-6">
+        <div class="column column-sm-12 column-6">
             <form>
                 <label for="name">Naam</label>
                 <input type="text" id="name" name="name" placeholder="Jouw naam...">
@@ -15,19 +15,19 @@
                 <button type="submit" class="btn">Verzenden</button>
             </form>
         </div>
-        <div class="column column-6">
+        <div class="column column-sm-12 column-6">
             <section class="contactinfo">
                 <div class="row">
-                    <div class="column column-4">
+                    <div class="column column-sm-12 column-4">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                         <p>Industrieweg 232</p>
                         <p>9030 Gent</p>
                     </div>
-                    <div class="column column-4">
+                    <div class="column column-sm-12 column-4">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                         <p>09 234 86 00</p>
                     </div>
-                    <div class="column column-4">
+                    <div class="column column-sm-12 column-4">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
                         <p>info@interactivewall.be</p>
                     </div>
