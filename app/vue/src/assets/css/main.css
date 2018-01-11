@@ -538,7 +538,8 @@ form textarea {
       /* IE                            */ }
   .art section.controls {
     width: calc(100% - 250px);
-    float: left; }
+    float: left;
+    max-width: 1000px; }
   .art article {
     width: 250px;
     float: left;
@@ -551,6 +552,8 @@ form textarea {
       padding: 0.8rem;
       width: 100%;
       resize: vertical; }
+    .art article input.error {
+      border-color: red; }
     .art article h1 {
       padding: 20px 0;
       font-family: 'Open Sans', Arial, sans-serif;

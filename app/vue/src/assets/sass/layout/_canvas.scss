@@ -31,6 +31,7 @@
     section.controls {
         width: calc(100% - 250px);
         float: left;
+        max-width: 1000px;
     }
 
     article {
@@ -47,6 +48,8 @@
             width: 100%;
             resize: vertical;
         }
+
+        input.error { border-color: red; }
 
         h1 {
             padding: 20px 0;
