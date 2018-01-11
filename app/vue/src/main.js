@@ -17,6 +17,7 @@ Vue.use(require('vue-pubnub'), {
 });
 
 Vue.use(Slugify);
+Vue.component('Navigatie', require('./components/backend/components/Navigatie.vue'));
 
 /* eslint-disable no-new */
 new Vue({

@@ -3,9 +3,15 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Create from '@/components/Create'
 import PaintingsOverview from '@/components/PaintingsOverview'
-import About from '@/components/About'
+import About from '@/components/About'  
 import Contact from '@/components/Contact'
 import Wall from '@/components/Wall'
+
+import Login from '@/components/backend/Login'
+import Paintings from '@/components/backend/Paintings'
+import PaintingDetail from '@/components/backend/PaintingDetail'
+import PaintingEdit from '@/components/backend/PaintingEdit'
+import PaintingDelete from '@/components/backend/PaintingDelete'
 
 Vue.use(Router)
 

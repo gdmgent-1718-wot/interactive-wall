@@ -1,11 +1,16 @@
 'use strict';
+module.exports = function(app) {
+  let paintings = require('../controllers/PaintingsController');
 
-module.exports = function (app) {
-    let paintingList = require('../controllers/PaintingsController');
-    app.route('/paintings')
-        .get(paintingList.list_all_paintings)
-            .post(paintingList.create_a_painting);
-    app.route('paintings/:paintingId')
-        .get(paintingList.read_a_painting);
+
+  // user List Routes
+  app.route('/paintings')
+    .get(paintings.paintingindex)
+    .post(paintings.paintingcreate);
+
+  app.route('/paintings/:id')
+    .get(paintings.paintingshow)
+    .put(paintings.paintingedit)
+    .delete(paintings.paintingdelete);
 
 };

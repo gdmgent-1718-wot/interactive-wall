@@ -23,4 +23,4 @@ const PaintingSchema = new Schema({
     },
 
 });
-module.exports = mongoose.model('Paintings', PaintingSchema);
+module.exports = mongoose.model('Painting', PaintingSchema);

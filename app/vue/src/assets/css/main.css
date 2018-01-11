@@ -406,9 +406,9 @@ h1 {
 
 h2 {
   font-weight: 900;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  color: #35e5b3; }
 
 nav {
   position: fixed;
@@ -422,7 +422,7 @@ nav {
   padding: 1rem 0;
   transition: left 0.3s ease-in;
   z-index: 20; }
-  nav .fa-times {
+  nav.webapp__nav .fa-times {
     position: absolute;
     right: 2rem;
     top: 2rem;
@@ -431,23 +431,38 @@ nav {
   nav.nav-open {
     position: fixed;
     left: 0; }
-  nav img {
+  nav.webapp__nav img {
     width: 150px;
     margin: 5rem 0 6rem; }
-  nav li {
+  nav.webapp__nav li {
     list-style-type: none;
     display: block; }
-    nav li a {
+    nav.webapp__nav li a {
       font-size: 1.1rem;
       padding: 1rem;
       display: block;
       border-right: 5px solid rgba(53, 229, 179, 0);
       border-left: 5px solid rgba(53, 229, 179, 0);
       margin: 2rem 0; }
-      nav li a:hover {
+      nav.webapp__nav li a:hover {
         background: rgba(53, 229, 179, 0.1);
         color: #35e5b3;
         border-right: 5px solid #35e5b3; }
+
+nav.dashboard__nav {
+  float: left;
+  width: 17%;
+  padding: 2rem; }
+  nav.dashboard__nav h1 {
+    font-size: 1.5rem; }
+  nav.dashboard__nav li {
+    list-style-type: none;
+    margin-bottom: 2rem;
+    font-weight: 700; }
+  nav.dashboard__nav .fa {
+    width: 52px;
+    font-size: 1.5rem;
+    color: #35e5b3; }
 
 .row {
   display: block;
@@ -490,14 +505,22 @@ nav {
 .column-9 {
   width: 75%; }
 
-header {
+header.webapp__header {
   text-align: center;
   margin-bottom: 2.6rem; }
-  header img {
+  header.webapp__header img {
     width: 200px; }
+
+header.dashboard__header {
+  padding: 2rem;
+  border-bottom: 2px solid #c7d1cd;
+  background: white; }
+  header.dashboard__header img {
+    height: 50px; }
 
 form input[type="text"],
 form input[type="email"],
+form input[type="password"],
 form textarea {
   display: block;
   margin: 0.5rem 0 2rem;
@@ -605,12 +628,16 @@ form textarea {
   border: 2px solid #35e5b3;
   display: inline-block;
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.5rem;
   text-align: center;
-  font-family: 'Lato', 'Arial', sans-serif; }
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-size: 0.8rem; }
   .btn:hover {
     background: rgba(53, 229, 179, 0.1);
     color: #35e5b3; }
+
+.smallbtn {
+  width: auto; }
 
 section.painting {
   position: relative; }
@@ -650,5 +677,44 @@ section.painting {
   padding: 1rem;
   width: 52px;
   margin: 2rem 0 1rem; }
+
+.dashboard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: white; }
+  .dashboard .content {
+    width: 83%;
+    padding: 2rem;
+    float: left;
+    border-left: 2px solid #c7d1cd; }
+    .dashboard .content h1 {
+      margin-bottom: 0; }
+    .dashboard .content h2 {
+      margin-bottom: 2rem; }
+  .dashboard table {
+    margin-top: 1rem;
+    width: 100%; }
+    .dashboard table thead {
+      text-align: left; }
+    .dashboard table.overview__table td {
+      border-top: 1px solid #c7d1cd;
+      padding: 0 0.5rem; }
+    .dashboard table.detail__table td {
+      padding: 0.5rem; }
+      .dashboard table.detail__table td:first-child {
+        width: 135px;
+        font-weight: 700; }
+    .dashboard table .cell__image {
+      text-align: center; }
+    .dashboard table img {
+      height: 50px; }
+    .dashboard table .fa {
+      padding: 5px;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+      color: #35e5b3; }
 
 /*# sourceMappingURL=main.css.map */
