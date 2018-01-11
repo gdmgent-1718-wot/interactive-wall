@@ -11,9 +11,17 @@
         padding: 2rem;
         float: left;
         border-left: 2px solid $grey;
+
+        h1 {
+            margin-bottom: 0;
+        }
+        h2 {
+            margin-bottom: 2rem;
+        }
     }
 
     table {
+        margin-top: 1rem;
         width: 100%;
         thead {
             text-align: left;

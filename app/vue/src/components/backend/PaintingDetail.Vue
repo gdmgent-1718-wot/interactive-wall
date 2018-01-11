@@ -55,6 +55,24 @@ export default {
         this.painting = response.data;
         });
     
+  },
+  methods: {
+      onSubmit(){
+        let newPainting = {
+          title: this.painting.title,
+          artist: this.painting.artist,
+          imageUrl: this.painting.imageUrl
+        }
+
+        console.log(newPainting);
+        axios.post('http://localhost:3000/paintings', newPainting)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+      }
   }
 }
 </script>

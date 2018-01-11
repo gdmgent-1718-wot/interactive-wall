@@ -3,6 +3,7 @@
       <navigatie></navigatie>
       <div class="content">
           <h1>Dashboard</h1>
+          <h2>Tekeningen</h2>
           <table class="overview__table">
               <thead>
                   <th>thumbnail</th>

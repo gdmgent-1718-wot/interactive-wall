@@ -34,18 +34,13 @@ export default {
          this.navOpen = false;
      }
 	},
-	mounted() {
-		console.log(this.$route.path);
-	},
   methods: {
       toggleNav() {
           if (this.navOpen == false) {
               this.navOpen = true;
-              console.log('nav is open');
           }
           else {
               this.navOpen = false
-              console.log('nav is dicht');
           }
       },
       closeNav() {

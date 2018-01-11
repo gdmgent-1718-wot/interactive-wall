@@ -403,9 +403,9 @@ h1 {
 
 h2 {
   font-weight: 900;
-  text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  color: #35e5b3; }
 
 nav.webapp__nav {
   height: 100vh;
@@ -450,6 +450,8 @@ nav.dashboard__nav {
   float: left;
   width: 17%;
   padding: 2rem; }
+  nav.dashboard__nav h1 {
+    font-size: 1.5rem; }
   nav.dashboard__nav li {
     list-style-type: none;
     margin-bottom: 2rem;
@@ -596,7 +598,12 @@ section.painting {
     padding: 2rem;
     float: left;
     border-left: 2px solid #c7d1cd; }
+    .dashboard .content h1 {
+      margin-bottom: 0; }
+    .dashboard .content h2 {
+      margin-bottom: 2rem; }
   .dashboard table {
+    margin-top: 1rem;
     width: 100%; }
     .dashboard table thead {
       text-align: left; }
