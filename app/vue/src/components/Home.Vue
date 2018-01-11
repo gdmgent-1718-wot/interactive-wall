@@ -34,6 +34,7 @@ export default {
         console.log(response.data);
         console.log(response.data.length);
         let lastitems = response.data.slice((response.data.length - 3),response.data.length);
+        lastitems.reverse();
         this.paintings = lastitems;
       })
       .then(error => {

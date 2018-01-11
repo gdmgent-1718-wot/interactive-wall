@@ -7,7 +7,6 @@
 			<ul>
 			  <li><router-link to="/" @click.prevent="toggleNav">Live Stream</router-link></li>
 			  <li><router-link to="/galerij" @click.prevent="toggleNav">Galerij</router-link></li>
-			  <li><router-link to="/about" @click.prevent="toggleNav">About</router-link></li>
 			  <li><router-link to="/contact" @click.prevent="toggleNav">Contact</router-link></li>
 		 	</ul>
 	  </nav>

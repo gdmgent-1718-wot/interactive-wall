@@ -485,7 +485,7 @@ nav.dashboard__nav {
     width: 300px;
     padding: 1rem 0; }
     nav.webapp__nav img {
-      display: block;
+      display: inline;
       width: 150px;
       margin: 5rem 0 6rem; } }
 .row {
