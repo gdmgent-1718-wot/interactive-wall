@@ -1,7 +1,16 @@
-header {
+header.webapp__header {
     text-align: center;
     margin-bottom: 2.6rem;
     img {
         width: 200px;
+    }
+}
+
+header.dashboard__header {
+    padding: 2rem;
+    border-bottom: 2px solid $grey;
+    background: white;
+    img {
+        height: 50px;
     }
 }
