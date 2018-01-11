@@ -40,7 +40,6 @@ export default {
   data() {
     return {
       paintings: [],
-      layout: 'dashboard'
     };
   },
   mounted() {

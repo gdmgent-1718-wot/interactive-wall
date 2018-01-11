@@ -45,7 +45,6 @@ export default {
   data () {
     return {
       painting: {},
-      layout: 'dashboard'
     }
   },
   mounted () {

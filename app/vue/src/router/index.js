@@ -22,6 +22,11 @@ let routes = [
     { path: '/about', component: About },
     { path: '/contact', component: Contact },
     { path: '/wall', component: Wall },
+    { path: '/login', component: Login },
+    { path: '/dashboard/paintings', component: Paintings },
+    { path: '/dashboard/painting/:id', component: PaintingDetail },
+    { path: '/dashboard/painting/:id/edit', component: PaintingEdit },
+    { path: '/dashboard/painting/:id/delete', component: PaintingDelete },
 ];
 
 export default new Router({

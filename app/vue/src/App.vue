@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-	  <nav class="webapp__nav" v-if="layout != 'dashboard'" :class="{ 'nav-open': navOpen }">
+	  <nav class="webapp__nav" :class="{ 'nav-open': navOpen }">
 			<i class="fa fa-times" @click.prevent="toggleNav"></i>
 			<router-link to="/"><img src="src/assets/logo_wit.png"></router-link>
 			<h2>Navigatie</h2>
@@ -12,8 +12,8 @@
 		 	</ul>
 	  </nav>
 	  <div class="container" v-bind:class="{ 'nav-open': !navOpen }">
-		<i v-if="this.$route.path != ('/dashboard/login' && '/dashboard')" class="fa fa-bars" v-bind:class="{ 'nav-open': navOpen }" @click.prevent="toggleNav"></i>
-		<header class="webapp__header" v-if="this.$route.path != ('/dashboard/login' && '/dashboard')">
+		<i class="fa fa-bars" v-bind:class="{ 'nav-open': navOpen }" @click.prevent="toggleNav"></i>
+		<header class="webapp__header">
 			<img src="src/assets/logo.png">
 		</header>
 		<router-view/>
@@ -50,5 +50,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style type="text/css" src="./assets/css/main.css"></style>
