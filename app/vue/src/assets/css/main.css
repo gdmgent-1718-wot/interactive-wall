@@ -519,7 +519,7 @@ form textarea {
       border: 2px solid red;
       position: absolute;
       z-index: 100;
-      transition: all 0.1s; }
+      /*transition: all 0.1s;*/ }
     .art section canvas {
       width: 100%;
       border: 1px solid #555;

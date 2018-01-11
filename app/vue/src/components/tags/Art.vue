@@ -72,7 +72,6 @@
                     ['#ff0000', '#aa0000', '#990000', '#550000', '#110000'],
                     ['#00ff00', '#00aa00', '#009900', '#005500', '#001100'],
                     ['#0000ff', '#0000aa', '#000099', '#000055', '#000011'],
-                    ['#145487', '#dddddd', '#252c74', '#000055', '#000011'],
                     ['#ffffff', '#888888', '#555555', '#222222', '#000000'],
                 ],
                 brush: {
@@ -176,7 +175,7 @@
                             }
                         }
 
-                        if (this.controller.drawing == null) { this.prevcoords = null; }
+                        if (!this.controller.drawing && !this.controller.erasing) { this.prevcoords = null; }
 
                         if (this.controller.stop && this.controller.stopconfirm)
                         {
@@ -206,6 +205,11 @@
                             'margin-left': '-' + (((this.brush.size * 1.5) / 2) * this.scaling) + 'px',
                         };
 
+                        if (this.controller.home)
+                        {
+                            context.clearRect(0, 0, canvas.width, canvas.height);
+                        }
+
                         // If drawing or erasing, draw the line
                         if (this.controller.drawing || this.controller.erasing)
                         {
@@ -223,6 +227,7 @@
 
                             if (this.prevcoords != null)
                             {
+                                console.log(this.prevcoords);
                                 context.moveTo(this.prevcoords[0], this.prevcoords[1]);
                                 context.lineTo(coords1[0], coords1[1]);
                             }
@@ -247,7 +252,6 @@
                     imageUrl: artURL
                 }
 
-                console.log(newPainting);
                 axios.post(apiurl + '/paintings', newPainting).then((response) => {
                     // Reset
                     var context = canvas.getContext('2d');
