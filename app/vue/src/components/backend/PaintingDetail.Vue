@@ -5,7 +5,7 @@
           <h1>Dashboard</h1>
           <div class="row">
               <div class="column column-6">
-                  <img :src="painting.imageUrl">
+                  <img :src="hostingurl + '/' + painting.imageUrl">
                 </div>
               <div class="column column-6">
                   <h2>{{painting.title}}</h2>
@@ -40,11 +40,14 @@
 import axios from 'axios';
 import Vue from 'vue';
 
+import { apiurl, hostingurl } from './../../config.js';
+
 export default {
   name: 'PaintingDetail',
   data () {
     return {
       painting: {},
+      hostingurl: hostingurl
     }
   },
   mounted () {
@@ -77,8 +80,8 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .webapp__nav,
-    .webapp__header {
+    nav.webapp__nav,
+    header.webapp__header {
         display: none;
     }
 </style>

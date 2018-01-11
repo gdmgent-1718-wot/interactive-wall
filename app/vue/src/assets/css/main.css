@@ -434,6 +434,10 @@ nav.webapp__nav {
   nav.webapp__nav img {
     width: 150px;
     margin: 5rem 0 6rem; }
+  nav.webapp__nav h2 {
+    color: #fff;
+    text-transform: uppercase;
+    padding-bottom: 1rem; }
   nav.webapp__nav li {
     list-style-type: none;
     display: block; }
@@ -448,6 +452,9 @@ nav.webapp__nav {
         background: rgba(53, 229, 179, 0.1);
         color: #35e5b3;
         border-right: 5px solid #35e5b3; }
+      nav.webapp__nav li a.router-link-exact-active {
+        color: #35e5b3;
+        font-weight: bold; }
 
 nav.dashboard__nav {
   float: left;
@@ -723,5 +730,13 @@ section.painting {
       font-size: 1.2rem;
       margin-right: 0.5rem;
       color: #35e5b3; }
+
+.painting__details {
+  text-align: center; }
+  .painting__details img {
+    display: inline-block;
+    border: 1px solid rgba(0, 0, 0, 0.1); }
+  .painting__details h1 {
+    margin: 1rem 0 0; }
 
 /*# sourceMappingURL=main.css.map */

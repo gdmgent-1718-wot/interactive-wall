@@ -1,5 +1,5 @@
 <template>
-  <div class="delete">
+  <div class="dashboard delete">
       <navigatie></navigatie>
       <div class="content">
           <h1>Dashboard</h1>
@@ -23,21 +23,14 @@ export default {
       painting: {},
     }
   },
-  mounted () {
-      axios.delete('http://localhost:3000/paintings/' + this.$route.params.id)
-      .then(response => {
-        console.log(response)
-        this.painting = response.data;
-        });
-    
-    
-    
+  mounted () {    
   },
   methods: {
     onSubmit(){
     axios.delete('http://localhost:3000/paintings/' + this.$route.params.id)
         .then((response) => {
-        console.log(response);
+          console.log(response);
+          location.href = '/dashboard/paintings';
         })
         .catch((error) => {
         console.log(error);
@@ -48,8 +41,8 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .webapp__nav,
-    .webapp__header {
+    nav.webapp__nav,
+    header.webapp__header {
         display: none;
     }
 </style>

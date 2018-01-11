@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-link :to="'/galerij/' + item._id">
         <section class="painting">
             <div class="painting__image">
                 <div :class="'image upload_' + item_random_id" style="background-image: url(http://angry-moustache.com/loading.gif)"> </div>
@@ -9,6 +10,7 @@
                 <p>{{ item.artist }}</p>
             </div>
         </section>
+        </router-link>
       </div>
 </template>
 

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Create from '@/components/Create'
 import PaintingsOverview from '@/components/PaintingsOverview'
+import Detail from '@/components/Detail'
 import About from '@/components/About'  
 import Contact from '@/components/Contact'
 import Wall from '@/components/Wall'
@@ -19,6 +20,7 @@ let routes = [
     { path: '/', component: Home },
     { path: '/nieuw', component: Create },
     { path: '/galerij', component: PaintingsOverview },
+    { path: '/galerij/:id', component: Detail },
     { path: '/about', component: About },
     { path: '/contact', component: Contact },
     { path: '/wall', component: Wall },

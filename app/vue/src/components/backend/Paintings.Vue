@@ -32,6 +32,8 @@
 import axios from "axios";
 import Vue from 'vue';
 
+import { apiurl, hostingurl } from './../../config.js';
+
 import Navigatie from './components/Navigatie.vue';
 Vue.component( 'navigatie', Navigatie );
 
@@ -40,6 +42,7 @@ export default {
   data() {
     return {
       paintings: [],
+      hostingurl: hostingurl
     };
   },
   mounted() {

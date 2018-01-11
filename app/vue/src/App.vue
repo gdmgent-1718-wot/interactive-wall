@@ -2,7 +2,7 @@
   <div id="app">
 	  <nav class="webapp__nav" :class="{ 'nav-open': navOpen }">
 			<i class="fa fa-times" @click.prevent="toggleNav"></i>
-			<router-link to="/"><img src="src/assets/logo_wit.png"></router-link>
+			<router-link to="/"><img src="./assets/logo_wit.png"></router-link>
 			<h2>Navigatie</h2>
 			<ul>
 			  <li><router-link to="/" @click.prevent="toggleNav">Live Stream</router-link></li>
@@ -14,7 +14,7 @@
 	  <div class="container" v-bind:class="{ 'nav-open': !navOpen }">
 		<i class="fa fa-bars" v-bind:class="{ 'nav-open': navOpen }" @click.prevent="toggleNav"></i>
 		<header class="webapp__header">
-			<img src="src/assets/logo.png">
+			<img src="./assets/logo.png">
 		</header>
 		<router-view/>
 	</div>
