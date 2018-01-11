@@ -28,7 +28,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .webapp__nav,
+    nav.webapp__nav,
     .webapp__header {
         display: none;
     }

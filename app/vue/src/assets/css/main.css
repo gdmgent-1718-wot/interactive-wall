@@ -410,7 +410,7 @@ h2 {
   font-size: 1.5rem;
   color: #35e5b3; }
 
-nav {
+nav.webapp__nav {
   position: fixed;
   left: -300px;
   height: 100vh;
@@ -428,7 +428,7 @@ nav {
     top: 2rem;
     font-size: 1.5rem;
     cursor: pointer; }
-  nav.nav-open {
+  nav.webapp__nav.nav-open {
     position: fixed;
     left: 0; }
   nav.webapp__nav img {
@@ -530,6 +530,13 @@ form textarea {
   resize: vertical; }
 form textarea {
   min-height: 200px; }
+
+#form__dashboard {
+  margin: 150px auto;
+  width: 500px;
+  border: 2px solid #c7d1cd;
+  border-radius: 5px;
+  padding: 2rem; }
 
 .art {
   position: relative; }
