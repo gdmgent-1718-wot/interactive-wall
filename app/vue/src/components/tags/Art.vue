@@ -54,8 +54,8 @@
         data() {
             return {
                 form: {
-                    username: 'Sander',
-                    artname: 'Heeeyyy',
+                    username: '',
+                    artname: '',
                 },
                 controller: {},
                 activecolor: [3, 4],
